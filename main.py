@@ -1,6 +1,6 @@
-from aiogram import Bot, Dispatcher, types, F
+from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message
-from aiogram.filters import Command, CommandStart, StateFilter
+from aiogram.filters import CommandStart, StateFilter
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import StatesGroup, State
 from dotenv import load_dotenv
@@ -8,9 +8,7 @@ import logging
 from dictionry import *
 import asyncio
 import os
-from utils import *
-from keyboards import *
-from person import Hero, Evil
+from person import Hero
 from rpg_ramin import *
 
 load_dotenv()
@@ -22,7 +20,7 @@ dp = Dispatcher()
 users = {}
 compon = {'name': None, 'hero': None, 'evil': None}
 
-class St(StatesGroup):
+class Reg(StatesGroup):
     for_old = State()
     set_name = State()
     set_rasa = State()
