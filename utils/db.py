@@ -22,7 +22,8 @@ def dbselect(table, column):
     result = cursor.fetchall()
     connection.commit()
     connection.close()
-    return result
+    res = [r[0] for r in result]
+    return res
 
 
 #dbinsert('Evil', id=4, name='Яга', hp=60, dmg=40)
