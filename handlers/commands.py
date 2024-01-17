@@ -21,17 +21,17 @@ async def cmd_reg(message: Message, state: FSMContext):
     await state.set_state(Reg.name)
     await message.answer('Напиши имя героя')
 
-@router.message(Command('game'), Check_hero_having())
+@router.message(Command('game'))
 async def cmd_game_with(message: Message, state: FSMContext):
-    await state.set_state(Game.new_evil)
-    info = await state.get_state()
-    await message.answer(f'Твои показатели:\nЗдоровье: {None}\nУрон: {None}')
+    user_info = await state.get_data()
+    if user_info:
+        await state.set_state(Game.new_evil)
+        await message.answer(f'Твои показатели:\nЗдоровье: {None}\nУрон: {None}')
+    else:
+        await message.answer('У тебя нет героя( Пройди, пожалуйста, регистрацию')
+        await cmd_reg(message, state)
 
 
-@router.message(Command('game'), Check_hero_having())
-async def cmd_game_without(message: Message, state: FSMContext):
-    await message.answer('У тебя нет героя( Пройди, пожалуйста, регистрацию')
-    await cmd_reg(message, state)
 
 
 

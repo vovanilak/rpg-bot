@@ -147,8 +147,13 @@ class BAD_BOY:
     @staticmethod
     def create_enemy():
         name = r.randint(0, 4)
+        lst = ["ВЫ потратили все своё время на тик ток. На вас напал TimeLord",
+               "пока вы переходили пешеходный перехо на вас напала фура",
+               "Пока вы лежали на диване вас позвала мама на вас напала диван ",
+               "Ваш сон потривожел будилник"]
         hp_enemy = r.randint(50, 80)
         dg_enemy = r.randint(60, 100)
+        '''
         if name == 1:
             print("ВЫ потратили все своё время на тик ток " + "На вас напал TimeLord")
         elif name == 2:
@@ -157,6 +162,7 @@ class BAD_BOY:
             print("Пока вы лежали на диване вас позвала мама на вас напала диван ")
         elif name == 4:
             print("Ваш сон потривожел будилник")
+        '''
         return BAD_BOY(name, hp_enemy, dg_enemy)
 
     def ataka(self, enemy):
@@ -167,6 +173,8 @@ class BAD_BOY:
         else:
             print(f"У вас осталось столько хп {enemy.hp}")
             print(f"У вас осталось столько урон {enemy.dg}")
+    def __str__(self):
+        return f'{self.name}\nЗдоровье: {self.hp}\nУрон: {self.dg}'
 
 
 def fs():

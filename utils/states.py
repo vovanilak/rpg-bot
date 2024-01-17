@@ -7,7 +7,7 @@ class Reg(StatesGroup):
     static = State()
 
 class Game(StatesGroup):
-    new_evil = State
-    yes = State()
-    no = State()
+    start = State()
+    new_evil = State()
+    choose = State()
     run = State()

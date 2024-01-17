@@ -13,3 +13,4 @@ class Check_hero_having(BaseFilter):
     async def __call__(self, state: FSMContext = default_state):
         info = await state.get_data()
         return 'hero' in info
+

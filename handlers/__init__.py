@@ -1,1 +1,1 @@
-from . import commands, game, person, registration, rpg_ramin, states
+from . import commands, game, registration
