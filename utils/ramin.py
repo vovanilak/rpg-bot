@@ -169,10 +169,12 @@ class BAD_BOY:
         enemy.hp = enemy.hp - self.dg
         if enemy.hp <= 0:
             print("Вы погибли ахахахаххахахахахахахахахахахахахахахахахахаххахахаха!!!!!!!!!")
-            quit()
+            #quit()
+            return False
         else:
             print(f"У вас осталось столько хп {enemy.hp}")
             print(f"У вас осталось столько урон {enemy.dg}")
+            return True
     def __str__(self):
         return f'{self.name}\nЗдоровье: {self.hp}\nУрон: {self.dg}'
 
